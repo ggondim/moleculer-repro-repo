@@ -14,7 +14,7 @@ const ApiService: ServiceSchema<ApiSettingsSchema> = {
 	// More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
 	settings: {
 		// Exposed port
-		port: process.env.PORT != null ? Number(process.env.PORT) : 3000,
+		port: process.env.PORT != null ? Number(process.env.PORT) : 4987,
 
 		// Exposed IP
 		ip: "0.0.0.0",
@@ -73,9 +73,6 @@ const ApiService: ServiceSchema<ApiSettingsSchema> = {
 					// return this.doSomething(ctx, res, data);
 					return data;
 				}, */
-
-				// Calling options. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Calling-options
-				callingOptions: {},
 
 				bodyParsers: {
 					json: {

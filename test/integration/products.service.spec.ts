@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, test } from "@jest/globals";
 import { ServiceBroker } from "moleculer";
-import type { ProductEntity } from "../../services/products.service";
-import TestService from "../../services/products.service";
+import type { ProductEntity } from "../../services/products";
+import TestService from "../../services/products";
 
 describe("Test 'products' service", () => {
 	describe("Test actions", () => {

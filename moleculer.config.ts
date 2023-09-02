@@ -1,3 +1,4 @@
+// eslint-disable
 import type { BrokerOptions, MetricRegistry, ServiceBroker } from "moleculer";
 import { Errors } from "moleculer";
 
@@ -192,7 +193,15 @@ const brokerConfig: BrokerOptions = {
 	},
 
 	// Register custom middlewares
-	middlewares: [],
+	middlewares: [{
+		call(next: (arg0: any, arg1: any, arg2: any) => Promise<any>) {
+			return (actionName: any, params: any, opts: any) => {
+				return next(actionName, params, opts).then((res: any) => {
+					return res;
+				});
+			};
+		},
+	}],
 
 	// Register custom REPL commands.
 	replCommands: null,
